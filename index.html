@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    background: yellow;
+}
+#animate {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background-color: red;
+}
+</style>
+<body>
+
+    <p><button onclick="myMove()">Click fsdfsCAVALOasdfadffsdeeeee</button></p> 
+
+    <div id ="container">
+        <div id ="animate"></div>
+    </div>
+
+    <script>
+        let px = 0;
+        let py = 0;
+
+        let id = null;
+
+        const Q_H = 50;
+        const Q_W = 50;
+
+        const MAX_H = 600;
+        const MAX_W = 1200;
+
+        const MAX_X = MAX_W - Q_W;
+        const MAX_Y = MAX_H - Q_H;
+
+
+        const anim_elem = document.getElementById("animate");   
+        anim_elem.style.width = Q_W + "px";
+        anim_elem.style.height = Q_H + "px";
+
+        const cont_elem = document.getElementById("container");   
+        cont_elem.style.width = MAX_W + "px";
+        cont_elem.style.height = MAX_H + "px";
+
+        let i = 1;
+        let j = 1;
+
+        function myMove() {
+            clearInterval(id);
+
+            const elem = document.getElementById("animate");   
+
+            px = 0;
+            py = 0;
+            i = 1;
+            j = 1;
+
+            elem.style.top = px + "px"; 
+            elem.style.left = py + "px"; 
+
+
+            id = setInterval(frame, 3);
+
+
+            function frame() {
+                px += i;
+                py += j;
+
+                if (px == MAX_X) {
+                    i = -1;
+                }
+
+                if (px == 0) {
+                    i = 1;
+                }
+
+                if (py == MAX_Y) {
+                    j = -1;
+                }
+
+                if (py == 0) {
+                    j = 1;
+                }
+
+                elem.style.top = py + "px"; 
+                elem.style.left = px + "px"; 
+            }
+        }
+
+myMove()
+    </script>
+
+</body>
+</html>
