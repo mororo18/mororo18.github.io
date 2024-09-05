@@ -5,30 +5,82 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Google Sans', sans-serif, system-ui;
 }
 
 
 #wrapper {
-    min-height: 100%;
-    background: yellow;
+    height: 100%;
+}
 
+#back-ground {
+    height: 100%;
+    background: yellow;
 
     display: flex;
     justify-content: center;
     align-items:    center;
 
     background: radial-gradient(circle at center, white 0, white 15%, rgb(225, 225, 255), rgb(150, 150, 150) 100%);
-    /*
-    height: 0px;
-    position: relative;
-    */
 }
 
 #my-icon {
     width: 200px;
-    transform: rotate(45deg);
     border-radius: 50%;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  #my-icon {
+    animation: clockwise-spin 12s infinite linear;
+  }
+
+  .text-ring {
+    animation: anti-clockwise-spin 12s infinite linear;
+  }
+
+  @keyframes clockwise-spin {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes anti-clockwise-spin {
+    to {
+      rotate: -360deg;
+    }
+  }
+}
+
+
+.text-ring {
+    position: absolute;
+}
+
+.text-ring [style*=--index] {
+    --character-width: 1.6; /* In "ch" units */
+    --inner-angle:  calc((360 / var(--total)) * 1deg);
+    --radius:       calc((var(--character-width, 1) / sin(var(--inner-angle))) * -1ch);
+    font-weight:    900;
+    font-family:    monospace;
+    font-size:      calc(var(--font-size, 2.2) * 1rem);
+    position:       absolute;
+    top:    50%;
+    left:   50%;
+    transform:
+        translate(-50%, -50%)
+        rotate(calc(var(--inner-angle) * var(--index)))
+        translateY(var(--radius, -5ch));
+}
+
+
+
+#header-area {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: red;
+}
+
 
 #bottom {
     display: flex;
@@ -46,42 +98,32 @@ html, body {
     <body>
 
         <div id ="wrapper">
-            <figure>
-                <img id="my-icon" src="my-icon.png" alt="Minha Figura">
-            </figure>
+
+            <div id="header-area">
+                <h1> header </h1>
+            </div>
+
+            <div id ="back-ground">
+                <script src="index.js"></script>
+                <script>
+                    text = 'mororó mororó mororó ';
+                    const textRingElement = TextRing(text);
+                    document.getElementById('back-ground').appendChild(textRingElement);
+                </script>
+
+
+                <figure>
+                    <img id="my-icon" src="my-icon.png" alt="Minha Figura">
+
+
+                </figure>
+            </div>
         </div>
 
         <div id ="bottom">
-            <strong> Teste   POTENTE</strong>
+            <strong> Teste POTENTE</strong>
         </div>
 
+
     </body>
-    <script>
-
-        const n = 100;
-
-        inc_angle = Math.PI / 100;
-        icon_angle = 0;
-
-        function css_rotate(rad) {
-            return "rotate(" + rad + "rad)";
-        }
-
-        function rotate_icon() {
-            icon_angle += inc_angle;
-
-            if (icon_angle > 2 * Math.PI) {
-                icon_angle = 0;
-            }
-
-            icon = document.getElementById("my-icon");   
-            icon.style.transform = css_rotate(icon_angle);
-        }
-        
-        function init_spin() {
-            id = setInterval(rotate_icon, 30);
-        }
-
-        init_spin();
-    </script>
 </html>
