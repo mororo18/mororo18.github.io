@@ -13,6 +13,26 @@ html, body {
     height: 100%;
 }
 
+#header-area {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#header {
+    width: min(25cm, 100%);
+    height: 75px;
+
+
+    /* background: grey; */
+}
+
+
 #back-ground {
     height: 100%;
     background: yellow;
@@ -27,6 +47,7 @@ html, body {
 #my-icon {
     width: 200px;
     border-radius: 50%;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -54,6 +75,7 @@ html, body {
 
 .text-ring {
     position: absolute;
+    /* position: fixed; */
 }
 
 .text-ring [style*=--index] {
@@ -73,12 +95,55 @@ html, body {
 }
 
 
+/*
+   exemplos:
+        (scaling)    https://codepen.io/ArnoldKos/pen/vNEpYm  
+*/
 
-#header-area {
+#eita-btn {
+    top:  calc(50% - 6cm - 25px);
+    left: calc(50% - 10cm);
+}
+
+#perai-btn {
+    top:  calc(50% - 25px);
+    left: calc(50% - 12cm);
+
+    animation: floating 5.5s ease-in-out infinite;
+}
+
+#boy-btn {
+    top:  calc(50% + 6cm - 25px);
+    left: calc(50% - 9cm);
+
+    animation: floating 5.2s ease-in-out infinite;
+}
+
+#q-btn {
+    top:  calc(50% + 6cm - 25px);
+    left: calc(50% + 9cm - 100px);
+
+    animation: floating 5.8s ease-in-out infinite;
+}
+
+.my-button {
     position: absolute;
-    width: 100%;
-    height: 100px;
-    background: red;
+
+    width: 100px;
+    height: 50px;
+
+    animation: floating 6s ease-in-out infinite;
+
+    transition: .2s ease-in-out 0s;
+
+    cursor: pointer;
+    z-index: 1;
+}
+
+@keyframes floating {
+    0%   { transform: scale(1.2) translate(0,  0px); }
+    50%  { transform: translate(5px, 15px); }
+    100% { transform: scale(1.2) translate(0, -0px); }    
 }
 
 
@@ -100,23 +165,42 @@ html, body {
         <div id ="wrapper">
 
             <div id="header-area">
-                <h1> header </h1>
+                <div id="header">
+                    <!--h1> header </h1-->
+                </div>
             </div>
 
+            <button class="my-button" id="eita-btn">
+                <b> eita </b>
+            </button>
+
+            <button class="my-button" id="perai-btn">
+                <b> perai po </b>
+            </button>
+
+            <button class="my-button" id="boy-btn">
+                <b> boooy </b>
+            </button>
+
+            <button class="my-button" id="q-btn">
+                <b> q </b>
+            </button>
+
             <div id ="back-ground">
+
+                <figure>
+                    <img id="my-icon" src="my-icon.png" alt="Minha Figura">
+                </figure>
+
+
+                <!-- Text Ring animation -->
                 <script src="index.js"></script>
                 <script>
+                    //text =   'welcome    welcome   ';
                     text = 'mororó mororó mororó ';
                     const textRingElement = TextRing(text);
                     document.getElementById('back-ground').appendChild(textRingElement);
                 </script>
-
-
-                <figure>
-                    <img id="my-icon" src="my-icon.png" alt="Minha Figura">
-
-
-                </figure>
             </div>
         </div>
 
