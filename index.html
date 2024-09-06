@@ -2,6 +2,17 @@
 <html>
     <style>
 
+@font-face {
+    font-family: "Fipps";
+    src: url("fonts/fipps-font/FippsRegular-enqx.otf");
+}
+
+@font-face {
+    font-family: "Gang Small";
+    src: url("fonts/gangsmall-font/GangSmallYuxian-Rpep6.ttf") format('truetype');
+}
+
+
 html, body {
     height: 100%;
     margin: 0;
@@ -101,11 +112,17 @@ html, body {
 */
 
 #eita-btn {
+    font-family: "Fipps";
+    font-size: 30px;
+
     top:  calc(50% - 6cm - 25px);
     left: calc(50% - 10cm);
 }
 
 #perai-btn {
+    font-family: "Gang Small";
+    font-size: 40px;
+
     top:  calc(50% - 25px);
     left: calc(50% - 12cm);
 
@@ -129,12 +146,15 @@ html, body {
 .my-button {
     position: absolute;
 
-    width: 100px;
+    width: 200px;
     height: 50px;
 
     animation: floating 6s ease-in-out infinite;
 
     transition: .2s ease-in-out 0s;
+
+    background: none;
+    border: none;
 
     cursor: pointer;
     z-index: 1;
@@ -171,11 +191,11 @@ html, body {
             </div>
 
             <button class="my-button" id="eita-btn">
-                <b> eita </b>
+                <b> projects </b>
             </button>
 
             <button class="my-button" id="perai-btn">
-                <b> perai po </b>
+                <b> projects </b>
             </button>
 
             <button class="my-button" id="boy-btn">
@@ -197,7 +217,8 @@ html, body {
                 <script src="index.js"></script>
                 <script>
                     //text =   'welcome    welcome   ';
-                    text = 'mororó mororó mororó ';
+                    text = 'victor  *  mororó  *  ';
+                    //text = 'mororó mororó mororó ';
                     const textRingElement = TextRing(text);
                     document.getElementById('back-ground').appendChild(textRingElement);
                 </script>
