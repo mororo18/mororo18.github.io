@@ -3,15 +3,9 @@
     <style>
 
 @font-face {
-    font-family: "Fipps";
-    src: url("fonts/fipps-font/FippsRegular-enqx.otf");
+    font-family: "ThemeVCK Text";
+    src: url("fonts/themevck_text/themevck-text.ttf");
 }
-
-@font-face {
-    font-family: "Gang Small";
-    src: url("fonts/gangsmall-font/GangSmallYuxian-Rpep6.ttf") format('truetype');
-}
-
 
 html, body {
     height: 100%;
@@ -63,11 +57,11 @@ html, body {
 
 @media (prefers-reduced-motion: no-preference) {
   #my-icon {
-    animation: clockwise-spin 12s infinite linear;
+    animation: clockwise-spin 24s infinite linear;
   }
 
   .text-ring {
-    animation: anti-clockwise-spin 12s infinite linear;
+    animation: anti-clockwise-spin 24s infinite linear;
   }
 
   @keyframes clockwise-spin {
@@ -90,11 +84,11 @@ html, body {
 }
 
 .text-ring [style*=--index] {
-    --character-width: 1.6; /* In "ch" units */
+    --character-width: 1.3; /* In "ch" units */
     --inner-angle:  calc((360 / var(--total)) * 1deg);
     --radius:       calc((var(--character-width, 1) / sin(var(--inner-angle))) * -1ch);
     font-weight:    900;
-    font-family:    monospace;
+    font-family:    "ThemeVCK Text";
     font-size:      calc(var(--font-size, 2.2) * 1rem);
     position:       absolute;
     top:    50%;
@@ -106,64 +100,74 @@ html, body {
 }
 
 
-/*
-   exemplos:
-        (scaling)    https://codepen.io/ArnoldKos/pen/vNEpYm  
-*/
-
-#eita-btn {
-    font-family: "Fipps";
-    font-size: 30px;
-
-    top:  calc(50% - 6cm - 25px);
-    left: calc(50% - 10cm);
-}
-
-#perai-btn {
-    font-family: "Gang Small";
-    font-size: 40px;
-
-    top:  calc(50% - 25px);
-    left: calc(50% - 12cm);
-
-    animation: floating 5.5s ease-in-out infinite;
-}
-
-#boy-btn {
-    top:  calc(50% + 6cm - 25px);
-    left: calc(50% - 9cm);
-
-    animation: floating 5.2s ease-in-out infinite;
-}
-
-#q-btn {
-    top:  calc(50% + 6cm - 25px);
-    left: calc(50% + 9cm - 100px);
-
-    animation: floating 5.8s ease-in-out infinite;
-}
-
 .my-button {
     position: absolute;
 
-    width: 200px;
-    height: 50px;
+}
 
-    animation: floating 6s ease-in-out infinite;
+.my-button[style*=--x][style*=--y]:active {
+    /* (ver dps)
+       https://stackoverflow.com/questions/68512069/css-force-animation-to-be-fully-completed-on-click-active-or-focus
+    */
+}
 
-    transition: .2s ease-in-out 0s;
+.my-button[style*=--x][style*=--y]:hover {
+    text-shadow: 0px 0px 80px;
 
-    background: none;
+    animation: none;
+    transform: scale(1.4);
+}
+
+.my-button[style*=--x][style*=--y] {
+
+    font-family: "ThemeVCK Text";
+    font-size: 30px;
+
+    --width: 280px;
+    --height: 280px;
+
+    width:  var(--width);
+    height: var(--height);
+
+    top:  calc(50% + var(--y, 3cm) - var(--height) / 2 );
+    left: calc(50% + var(--x, 3cm) - var(--width)  / 2 );
+
+    --factor: 1;
+    
+    transition: text-shadow .3s;
+    animation: floating calc( 5s + 1s * var(--factor)) ease-in-out infinite;
+
     border: none;
+    background: none;
 
     cursor: pointer;
     z-index: 1;
+
+
 }
 
 @keyframes floating {
-    0%   { transform: scale(1.2) translate(0,  0px); }
-    50%  { transform: translate(5px, 15px); }
-    100% { transform: scale(1.2) translate(0, -0px); }    
+    0%   { transform: translate(0,    0px) scale(1.2); }
+    50%  { transform: translate(5px, 15px)           ; }
+    100% { transform: translate(0,   -0px) scale(1.2); }    
+}
+
+#blob {
+	background: radial-gradient(rgb(110, 110, 110), transparent);
+
+    --blob-size: 100px;
+
+	filter: blur(calc(var(--blob-size)/2.15));
+	
+	width: var(--blob-size);
+	height: var(--blob-size);
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+
+	border-radius: 50%;
 }
 
 
@@ -184,27 +188,30 @@ html, body {
 
         <div id ="wrapper">
 
+            <!--div id="blob"></div-->
+
             <div id="header-area">
                 <div id="header">
                     <!--h1> header </h1-->
                 </div>
             </div>
 
-            <button class="my-button" id="eita-btn">
+            <button class="my-button" style="--x: -10cm; --y: -8cm;">
+                <b> about </b>
+            </button>
+
+            <button class="my-button" style="--x: -14cm; --y: 0.5cm;">
                 <b> projects </b>
             </button>
 
-            <button class="my-button" id="perai-btn">
-                <b> projects </b>
+            <button class="my-button" style="--x: -9.5cm; --y: 8.5cm;">
+                <b> resume </b>
             </button>
 
-            <button class="my-button" id="boy-btn">
-                <b> boooy </b>
+            <button class="my-button" style="--x: 14cm; --y: 0cm;">
+                <b> contact </b>
             </button>
 
-            <button class="my-button" id="q-btn">
-                <b> q </b>
-            </button>
 
             <div id ="back-ground">
 
@@ -213,14 +220,44 @@ html, body {
                 </figure>
 
 
-                <!-- Text Ring animation -->
                 <script src="index.js"></script>
                 <script>
+                    // Text Ring animation
+
                     //text =   'welcome    welcome   ';
-                    text = 'victor  *  mororó  *  ';
+                    text = 'mororó * mororó * mororó * ';
                     //text = 'mororó mororó mororó ';
                     const textRingElement = TextRing(text);
                     document.getElementById('back-ground').appendChild(textRingElement);
+
+
+                    // randomize floating period of the buttons
+                    buttons = document.querySelectorAll('.my-button[style*="--x"][style*="--y"]');
+
+                    buttons.forEach(button => {
+                        factor = '1' || button.style.getPropertyValue('--factor');
+                        factor = Math.random() * parseFloat(factor);
+                        button.style.setProperty('--factor', factor);
+                    });
+
+
+                    /*
+                    const blob = document.getElementById('blob');
+
+                    document.body.onpointermove = event => {
+                        const { clientX, clientY } = event;
+
+                        blob.animate({
+                            left: `${clientX}px`,
+                            top: `${clientY}px`
+                        }, {
+                            duration: 300,
+                            fill: 'forwards'
+                        });
+                    }
+                    */
+
+
                 </script>
             </div>
         </div>
