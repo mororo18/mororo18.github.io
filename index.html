@@ -1,189 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <style>
+    <link rel="stylesheet" href="style.css" type="text/css">
 
-@font-face {
-    font-family: "ThemeVCK Text";
-    src: url("fonts/themevck_text/themevck-text.ttf");
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Google Sans', sans-serif, system-ui;
-}
-
-
-#wrapper {
-    height: 100%;
-}
-
-#header-area {
-    position: absolute;
-    width: 100%;
-    height: 120px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#header {
-    width: min(25cm, 100%);
-    height: 75px;
-
-
-    /* background: grey; */
-}
-
-
-#back-ground {
-    height: 100%;
-    background: yellow;
-
-    display: flex;
-    justify-content: center;
-    align-items:    center;
-
-    background: radial-gradient(circle at center, white 0, white 15%, rgb(225, 225, 255), rgb(150, 150, 150) 100%);
-}
-
-#my-icon {
-    width: 200px;
-    border-radius: 50%;
-
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  #my-icon {
-    animation: clockwise-spin 24s infinite linear;
-  }
-
-  .text-ring {
-    animation: anti-clockwise-spin 24s infinite linear;
-  }
-
-  @keyframes clockwise-spin {
-    to {
-      rotate: 360deg;
-    }
-  }
-
-  @keyframes anti-clockwise-spin {
-    to {
-      rotate: -360deg;
-    }
-  }
-}
-
-
-.text-ring {
-    position: absolute;
-    /* position: fixed; */
-}
-
-.text-ring [style*=--index] {
-    --character-width: 1.3; /* In "ch" units */
-    --inner-angle:  calc((360 / var(--total)) * 1deg);
-    --radius:       calc((var(--character-width, 1) / sin(var(--inner-angle))) * -1ch);
-    font-weight:    900;
-    font-family:    "ThemeVCK Text";
-    font-size:      calc(var(--font-size, 2.2) * 1rem);
-    position:       absolute;
-    top:    50%;
-    left:   50%;
-    transform:
-        translate(-50%, -50%)
-        rotate(calc(var(--inner-angle) * var(--index)))
-        translateY(var(--radius, -5ch));
-}
-
-
-.my-button {
-    position: absolute;
-
-}
-
-.my-button[style*=--x][style*=--y]:active {
-    /* (ver dps)
-       https://stackoverflow.com/questions/68512069/css-force-animation-to-be-fully-completed-on-click-active-or-focus
-    */
-}
-
-.my-button[style*=--x][style*=--y]:hover {
-    text-shadow: 0px 0px 80px;
-
-    animation: none;
-    transform: scale(1.4);
-}
-
-.my-button[style*=--x][style*=--y] {
-
-    font-family: "ThemeVCK Text";
-    font-size: 30px;
-
-    --width: 280px;
-    --height: 280px;
-
-    width:  var(--width);
-    height: var(--height);
-
-    top:  calc(50% + var(--y, 3cm) - var(--height) / 2 );
-    left: calc(50% + var(--x, 3cm) - var(--width)  / 2 );
-
-    --factor: 1;
-    
-    transition: text-shadow .3s;
-    animation: floating calc( 5s + 1s * var(--factor)) ease-in-out infinite;
-
-    border: none;
-    background: none;
-
-    cursor: pointer;
-    z-index: 1;
-
-
-}
-
-@keyframes floating {
-    0%   { transform: translate(0,    0px) scale(1.2); }
-    50%  { transform: translate(5px, 15px)           ; }
-    100% { transform: translate(0,   -0px) scale(1.2); }    
-}
-
-#blob {
-	background: radial-gradient(rgb(110, 110, 110), transparent);
-
-    --blob-size: 100px;
-
-	filter: blur(calc(var(--blob-size)/2.15));
-	
-	width: var(--blob-size);
-	height: var(--blob-size);
-
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	translate: -50% -50%;
-
-	border-radius: 50%;
-}
-
-
-#bottom {
-    display: flex;
-    justify-content: center;
-    align-items:     center;
-
-    width: 100%;
-    height: 100px;
-    background-color: red;
-
-    font: 1.2rem "Fira Sans", sans-serif;
-    color: white;
-}
-    </style>
     <body>
 
         <div id ="wrapper">
@@ -196,24 +14,28 @@ html, body {
                 </div>
             </div>
 
-            <button class="my-button" style="--x: -10cm; --y: -8cm;">
-                <b> about </b>
-            </button>
-
-            <button class="my-button" style="--x: -14cm; --y: 0.5cm;">
-                <b> projects </b>
-            </button>
-
-            <button class="my-button" style="--x: -9.5cm; --y: 8.5cm;">
-                <b> resume </b>
-            </button>
-
-            <button class="my-button" style="--x: 14cm; --y: 0cm;">
-                <b> contact </b>
-            </button>
 
 
             <div id ="back-ground">
+
+                <div id="buttons-box">
+                    <button class="my-button" style="--x: -28%; --y: -25%;">
+                        <b> about </b>
+                    </button>
+
+                    <button class="my-button" style="--x: -34%; --y: -3%;">
+                        <b> projects </b>
+                    </button>
+
+                    <button class="my-button" style="--x: -28%; --y: 20%;">
+                        <b> resume </b>
+                    </button>
+
+                    <button class="my-button" style="--x: 34%; --y: -3%;">
+                        <b> contact </b>
+                    </button>
+                </div>
+
 
                 <figure>
                     <img id="my-icon" src="my-icon.png" alt="Minha Figura">
