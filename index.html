@@ -53,13 +53,20 @@
 
 
                         /** define radial-gradient **/
-                        const k = 0.5;
-                        const vheight = window.innerHeight;
-                        const vwidth = window.innerWidth;
-                        const radial_end = k * Math.sqrt(Math.pow(vheight, 2) + Math.pow(vwidth, 2));
-                        const element = document.getElementById('back-ground');
-                        element.style.setProperty('--radial-end', `${radial_end}px`);
+                        const defineRadialGradient = () => {
+                            const k = 0.5;
+                            const vheight = window.innerHeight;
+                            const vwidth = window.innerWidth;
+                            const radial_end = k * Math.sqrt(Math.pow(vheight, 2) + Math.pow(vwidth, 2));
+                            const element = document.getElementById('back-ground');
+                            element.style.setProperty('--radial-end', `${radial_end}px`);
+                        };
 
+                        defineRadialGradient();
+                        window.addEventListener('resize', defineRadialGradient, true);
+
+
+                        document.onwheel = (event) => {};
 
                         /*
                     const blob = document.getElementById('blob');
@@ -78,15 +85,16 @@
                          */
 
 
+
                     </script>
                 </div>
 
                 <div class="body-wrapper">
-                    <div class="header-area">
-                        <div class="header">
+                        <div class="my-header">
                             <h1> header </h1>
                         </div>
-                    </div>
+                    <!--div class="header-area">
+                    </div-->
                     <div class="main-body">
 
                         <p>
@@ -108,6 +116,29 @@
                     <div id ="bottom">
                         <strong> footer POTENTE</strong>
                     </div>
+
+                    <script>
+                        /* add a class .isSticky if .my-header is sticked (works like a css selector) */
+                        const stickyElm = document.querySelector('.my-header');
+
+                        if (stickyElm) {
+                            const observer = new IntersectionObserver(
+                                (entries) => {
+                                    entries.forEach(entry => {
+                                        const isAtTop = entry.boundingClientRect.top <= 0;
+                                        // Adiciona a classe 'isSticky' se o elemento não estiver totalmente visível
+                                        // top: -1px; (in .my-header)
+                                        entry.target.classList.toggle('isSticky', isAtTop && entry.intersectionRatio < 1);
+                                    });
+                                },
+                                {
+                                    threshold: [1]
+                                }
+                            );
+
+                            observer.observe(stickyElm);
+                        }
+                    </script>
                 </div>
 
             </div>

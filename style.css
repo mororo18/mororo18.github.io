@@ -7,11 +7,16 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: 'Google Sans', sans-serif, system-ui;
+
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
 }
 
 
 #wrapper {
     height: 100%;
+
 }
 
 
@@ -26,6 +31,7 @@ html, body {
 */
 
 #back-ground {
+    /*overflow-y: scroll;*/
     --vheight: 100vh;
     --vwidth: 100vw;
 
@@ -34,6 +40,9 @@ html, body {
 }
 
 #floating-space {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
     top: 0%;
     left: 0%;
     height: 100vh;
@@ -157,7 +166,30 @@ html, body {
     100% { transform: translate(0,   -0px) scale(1.2); }    
 }
 
+
+.body-wrapper {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.main-body {
+    width: min(30cm, 100%);
+    display: flex;
+    flex-direction: column;
+
+    font-size: 30px;
+
+    background-color: rgb(235, 235, 235);
+    border-radius: 20px;
+}
+
 .header-area {
+
     width: 100vw;
     height: 120px;
 
@@ -167,32 +199,33 @@ html, body {
 
 }
 
-.header {
-    width: min(45cm, 80%);
-    height: 75px;
+.my-header {
+    position: sticky;
+    top: -1px;
+
+    width: 100vw;
+    /* width: min(30cm, 100%); */
+    height: 100px;
+
+    margin-top: 23px;
+    margin-bottom: 23px;
 
     background: grey;
 
     text-align: center;
-}
 
+    transition: opacity .2s;
 
-.body-wrapper {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    opacity: 0;
 
 }
 
-.main-body {
-    width: min(45cm, 80%);
-    display: flex;
-    flex-direction: column;
+.my-header.isSticky{
 
-    background-color: rgb(235, 235, 235);
-    border-radius: 20px;
+    opacity: 0.9;
+
 }
+
 
 #blob {
 	background: radial-gradient(rgb(110, 110, 110), transparent);
