@@ -14,35 +14,35 @@ html, body {
     height: 100%;
 }
 
-#header-area {
-    position: absolute;
-    width: 100%;
-    height: 120px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*
+#back-ground {
+    --vheight: 100vh;
+    --vwidth: 100vw;
 
+    height: 100%;
+    background: radial-gradient(circle at 50% calc(100vh / 2), white 0, white 15vw, rgb(225, 225, 255), rgb(150, 150, 150) calc(50vh / sin( atan( calc(50vh / 50vw) ) )) );
 }
-
-#header {
-    width: min(25cm, 100%);
-    height: 75px;
-
-
-    /* background: grey; */
-}
-
+*/
 
 #back-ground {
-    height: 100%;
-    background: yellow;
+    --vheight: 100vh;
+    --vwidth: 100vw;
+
+    height: auto;
+    background: radial-gradient(circle at 50% calc(100vh / 2), white 0, white 15vw, rgb(225, 225, 255), rgb(150, 150, 150) var(--radial-end));
+}
+
+#floating-space {
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
 
     display: flex;
     justify-content: center;
     align-items:    center;
 
-    background: radial-gradient(circle at center, white 0, white 15%, rgb(225, 225, 255), rgb(150, 150, 150) 100%);
 }
 
 #my-icon {
@@ -157,6 +157,43 @@ html, body {
     100% { transform: translate(0,   -0px) scale(1.2); }    
 }
 
+.header-area {
+    width: 100vw;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header {
+    width: min(45cm, 80%);
+    height: 75px;
+
+    background: grey;
+
+    text-align: center;
+}
+
+
+.body-wrapper {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.main-body {
+    width: min(45cm, 80%);
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(235, 235, 235);
+    border-radius: 20px;
+}
+
 #blob {
 	background: radial-gradient(rgb(110, 110, 110), transparent);
 
@@ -187,4 +224,5 @@ html, body {
 
     font: 1.2rem "Fira Sans", sans-serif;
     color: white;
+    z-index: 2;
 }

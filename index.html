@@ -5,65 +5,63 @@
     <body>
 
         <div id ="wrapper">
-
-            <!--div id="blob"></div-->
-
-            <div id="header-area">
-                <div id="header">
-                    <!--h1> header </h1-->
-                </div>
-            </div>
-
-
-
             <div id ="back-ground">
+                <div id ="floating-space">
+                    <div id="buttons-box">
+                        <button class="my-button" style="--x: -28%; --y: -25%;">
+                            <b> about </b>
+                        </button>
 
-                <div id="buttons-box">
-                    <button class="my-button" style="--x: -28%; --y: -25%;">
-                        <b> about </b>
-                    </button>
+                        <button class="my-button" style="--x: -34%; --y: -3%;">
+                            <b> projects </b>
+                        </button>
 
-                    <button class="my-button" style="--x: -34%; --y: -3%;">
-                        <b> projects </b>
-                    </button>
+                        <button class="my-button" style="--x: -28%; --y: 20%;">
+                            <b> resume </b>
+                        </button>
 
-                    <button class="my-button" style="--x: -28%; --y: 20%;">
-                        <b> resume </b>
-                    </button>
-
-                    <button class="my-button" style="--x: 34%; --y: -3%;">
-                        <b> contact </b>
-                    </button>
-                </div>
-
-
-                <figure>
-                    <img id="my-icon" src="my-icon.png" alt="Minha Figura">
-                </figure>
+                        <button class="my-button" style="--x: 34%; --y: -3%;">
+                            <b> contact </b>
+                        </button>
+                    </div>
 
 
-                <script src="index.js"></script>
-                <script>
-                    // Text Ring animation
-
-                    //text =   'welcome    welcome   ';
-                    text = 'mororó * mororó * mororó * ';
-                    //text = 'mororó mororó mororó ';
-                    const textRingElement = TextRing(text);
-                    document.getElementById('back-ground').appendChild(textRingElement);
+                    <figure>
+                        <img id="my-icon" src="my-icon.png" alt="Minha Figura">
+                    </figure>
 
 
-                    // randomize floating period of the buttons
-                    buttons = document.querySelectorAll('.my-button[style*="--x"][style*="--y"]');
+                    <script src="index.js"></script>
+                    <script>
+                        // Text Ring animation
 
-                    buttons.forEach(button => {
-                        factor = '1' || button.style.getPropertyValue('--factor');
-                        factor = Math.random() * parseFloat(factor);
-                        button.style.setProperty('--factor', factor);
-                    });
+                        //text =   'welcome    welcome   ';
+                        text = 'mororó * mororó * mororó * ';
+                        //text = 'mororó mororó mororó ';
+                        const textRingElement = TextRing(text);
+                        document.getElementById('floating-space').appendChild(textRingElement);
 
 
-                    /*
+                        // randomize floating period of the buttons
+                        buttons = document.querySelectorAll('.my-button[style*="--x"][style*="--y"]');
+
+                        buttons.forEach(button => {
+                            factor = '1' || button.style.getPropertyValue('--factor');
+                            factor = Math.random() * parseFloat(factor);
+                            button.style.setProperty('--factor', factor);
+                        });
+
+
+                        /** define radial-gradient **/
+                        const k = 0.5;
+                        const vheight = window.innerHeight;
+                        const vwidth = window.innerWidth;
+                        const radial_end = k * Math.sqrt(Math.pow(vheight, 2) + Math.pow(vwidth, 2));
+                        const element = document.getElementById('back-ground');
+                        element.style.setProperty('--radial-end', `${radial_end}px`);
+
+
+                        /*
                     const blob = document.getElementById('blob');
 
                     document.body.onpointermove = event => {
@@ -77,15 +75,43 @@
                             fill: 'forwards'
                         });
                     }
-                    */
+                         */
 
 
-                </script>
+                    </script>
+                </div>
+
+                <div class="body-wrapper">
+                    <div class="header-area">
+                        <div class="header">
+                            <h1> header </h1>
+                        </div>
+                    </div>
+                    <div class="main-body">
+
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut condimentum velit. Sed eget nulla ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisi diam, consequat sed urna pulvinar, sodales condimentum felis. Phasellus tincidunt gravida eros, vel cursus augue pellentesque in. Maecenas sollicitudin interdum ultrices. In rutrum pulvinar dolor, nec eleifend tortor ultrices et. Morbi porta posuere rhoncus. Nunc consectetur lectus in dui hendrerit porttitor.
+                        </p>
+                        <p>
+                        Vivamus posuere urna lacus, sit amet ornare odio iaculis tincidunt. Nam id rhoncus orci. Nullam eu metus enim. Aliquam blandit urna nec felis laoreet, nec finibus turpis venenatis. Morbi eu ex euismod odio faucibus mattis. Fusce vel lectus leo. Quisque feugiat mi eu neque placerat, vel congue leo tristique. Mauris id nibh blandit, ullamcorper orci vel, luctus neque. Proin lobortis sapien euismod justo tristique, ut iaculis arcu molestie. Sed elementum sagittis nisl non fermentum. Vivamus eget ante ut risus ornare dapibus. Ut quis eros quis velit egestas aliquet. Quisque non elit quis libero semper lobortis sit amet eu neque. Sed id risus sed dui scelerisque consectetur. Proin venenatis, urna vel interdum imperdiet, orci purus semper elit, ac tristique dui erat ac lacus. Sed egestas vulputate congue.
+                        </p>
+                        <p>
+                        Quisque sit amet lectus a nisl tristique ultricies et id mauris. Quisque sit amet semper dolor, nec gravida nunc. Donec maximus massa scelerisque molestie iaculis. Pellentesque vestibulum, est eget convallis convallis, urna enim molestie neque, in efficitur eros ante non sapien. Quisque congue tortor a tortor dictum tempus. Proin laoreet condimentum sapien sed gravida. Quisque elementum euismod mi.
+                        </p>
+                        <p>
+                        Vivamus dignissim, nulla et aliquet luctus, sem mauris imperdiet neque, sed elementum mauris ex vitae mauris. Aliquam erat volutpat. Maecenas vestibulum enim a est ullamcorper porta eu eget orci. Nam laoreet semper ligula, id faucibus metus interdum imperdiet. Nullam sed felis non quam malesuada mattis. Nulla imperdiet luctus ante at malesuada. Mauris nec nunc neque. Nulla semper feugiat magna, id rutrum purus dignissim id. Vivamus luctus tellus viverra finibus congue. Sed nec lacus libero. Etiam arcu leo, convallis sit amet mi eget, molestie mollis neque. Sed eu facilisis justo. Pellentesque finibus placerat lacus vitae iaculis. Ut suscipit, nisi vel lacinia mollis, sem ante bibendum nisl, id sagittis augue dui nec diam. Morbi vitae ultricies lorem, imperdiet cursus metus.
+                        </p>
+                        <p>
+                        Mauris fermentum nisl quis porttitor pretium. Sed mauris quam, pharetra quis egestas vel, egestas eleifend diam. Quisque congue ante a arcu posuere, in euismod orci suscipit. Nulla luctus tellus ante, eget dapibus felis egestas quis. Aliquam et iaculis augue. Suspendisse aliquam orci dolor, in pulvinar massa gravida sit amet. Maecenas eget arcu dignissim, suscipit leo nec, sodales tellus. Etiam gravida imperdiet vulputate. Maecenas nec pharetra metus. Sed finibus sapien vitae elementum maximus. Pellentesque ullamcorper est nisl, at sagittis mauris elementum bibendum. Morbi mi mi, ornare nec odio pretium, mollis pharetra nisi. Praesent dolor lorem, porttitor quis pretium non, iaculis vitae eros. Vestibulum auctor interdum nulla quis lobortis.
+                        </p>
+                    </div>
+                    <div id ="bottom">
+                        <strong> footer POTENTE</strong>
+                    </div>
+                </div>
+
             </div>
-        </div>
-
-        <div id ="bottom">
-            <strong> Teste POTENTE</strong>
+            <!--div id="blob"></div-->
         </div>
 
 
