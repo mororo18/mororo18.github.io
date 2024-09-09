@@ -146,10 +146,8 @@ html, body {
     top:  calc(50% + var(--y) - var(--height) / 2 );
     left: calc(50% + var(--x) - var(--width)  / 2 );
 
-    --factor: 1;
     
     transition: text-shadow .3s;
-    animation: floating calc( 5s + 1s * var(--factor)) ease-in-out infinite;
 
     border: none;
     background: none;
@@ -160,10 +158,18 @@ html, body {
 
 }
 
-@keyframes floating {
-    0%   { transform: translate(0,    0px) scale(1.2); }
-    50%  { transform: translate(5px, 15px)           ; }
-    100% { transform: translate(0,   -0px) scale(1.2); }    
+/* conditional aniamtion (depends on the OS's accessibility settings) */
+@media (prefers-reduced-motion: no-preference) {
+    .my-button[style*=--x][style*=--y] {
+        --factor: 1;
+        animation: floating calc( 5s + 1s * var(--factor)) ease-in-out infinite;
+    }
+
+    @keyframes floating {
+        0%   { transform: translate(0,    0px) scale(1.2); }
+        50%  { transform: translate(5px, 15px)           ; }
+        100% { transform: translate(0,   -0px) scale(1.2); }    
+    }
 }
 
 
