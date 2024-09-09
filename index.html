@@ -9,7 +9,7 @@
                 <div id ="floating-space">
                     <div id="buttons-box">
                         <button class="my-button" style="--x: -28%; --y: -25%;">
-                            <b> about </b>
+                             <b>  home </b>
                         </button>
 
                         <button class="my-button" style="--x: -34%; --y: -3%;">
@@ -17,6 +17,10 @@
                         </button>
 
                         <button class="my-button" style="--x: -28%; --y: 20%;">
+                            <b> about </b>
+                        </button>
+
+                        <button class="my-button" style="--x: 28%; --y: -25%;">
                             <b> resume </b>
                         </button>
 
@@ -90,9 +94,21 @@
                 </div>
 
                 <div class="body-wrapper">
-                        <div class="my-header">
-                            <h1> header </h1>
+                    <div class="my-header">
+                        <div id="icon-box">
+                            <a href="#floating-space"><img src="my-icon.png" alt="Minha Figura"></a>
                         </div>
+                        <nav>
+                             <ul>
+                                 <li><a>home</a></li>
+                                 <li><a>projects</a></li>
+                                 <li><a>about</a></li>
+                                 <li><a>resume</a></li>
+                                 <li><a>contact</a></li>
+                             </ul>
+                         </nav>
+                    </div>
+
                     <!--div class="header-area">
                     </div-->
                     <div class="main-body">
@@ -128,7 +144,7 @@
                                         const isAtTop = entry.boundingClientRect.top <= 0;
                                         // Adiciona a classe 'isSticky' se o elemento não estiver totalmente visível
                                         // top: -1px; (in .my-header)
-                                        entry.target.classList.toggle('isSticky', isAtTop && entry.intersectionRatio < 1);
+                                        entry.target.classList.toggle('isSticky', isAtTop && entry.intersectionRatio < 1 );
                                     });
                                 },
                                 {
