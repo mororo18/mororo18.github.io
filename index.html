@@ -94,14 +94,14 @@
                 </div>
 
                 <div class="body-wrapper">
-                    <div class="my-header">
+                    <div class="main-header">
                         <div id="icon-box">
                             <a href="#floating-space"><img src="my-icon.png" alt="Minha Figura"></a>
                         </div>
                         <nav>
                              <ul>
-                                 <li><a>home</a></li>
-                                 <li><a>projects</a></li>
+                                 <li><a href="#home">home</a></li>
+                                 <li><a href="#projects">projects</a></li>
                                  <li><a>about</a></li>
                                  <li><a>resume</a></li>
                                  <li><a>contact</a></li>
@@ -112,12 +112,22 @@
                     <!--div class="header-area">
                     </div-->
                     <div class="main-body">
+                        <div class="text-area">
+                            <div class="text-header" id="home"> home </div>
+                            <p id="eita">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut condimentum velit. Sed eget nulla ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisi diam, consequat sed urna pulvinar, sodales condimentum felis. Phasellus tincidunt gravida eros, vel cursus augue pellentesque in. Maecenas sollicitudin interdum ultrices. In rutrum pulvinar dolor, nec eleifend tortor ultrices et. Morbi porta posuere rhoncus. Nunc consectetur lectus in dui hendrerit porttitor.
+                            </p>
 
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut condimentum velit. Sed eget nulla ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus nisi diam, consequat sed urna pulvinar, sodales condimentum felis. Phasellus tincidunt gravida eros, vel cursus augue pellentesque in. Maecenas sollicitudin interdum ultrices. In rutrum pulvinar dolor, nec eleifend tortor ultrices et. Morbi porta posuere rhoncus. Nunc consectetur lectus in dui hendrerit porttitor.
-                        </p>
-                        <p>
-                        Vivamus posuere urna lacus, sit amet ornare odio iaculis tincidunt. Nam id rhoncus orci. Nullam eu metus enim. Aliquam blandit urna nec felis laoreet, nec finibus turpis venenatis. Morbi eu ex euismod odio faucibus mattis. Fusce vel lectus leo. Quisque feugiat mi eu neque placerat, vel congue leo tristique. Mauris id nibh blandit, ullamcorper orci vel, luctus neque. Proin lobortis sapien euismod justo tristique, ut iaculis arcu molestie. Sed elementum sagittis nisl non fermentum. Vivamus eget ante ut risus ornare dapibus. Ut quis eros quis velit egestas aliquet. Quisque non elit quis libero semper lobortis sit amet eu neque. Sed id risus sed dui scelerisque consectetur. Proin venenatis, urna vel interdum imperdiet, orci purus semper elit, ac tristique dui erat ac lacus. Sed egestas vulputate congue.
+                            <!-- me perdoe senhor, eu pequei -->
+                            <div class="text-footer"> * * * </div>
+
+                            <div class="text-header" id="projects"> projects </div>
+                            <p id="eita">
+                            Vivamus posuere urna lacus, sit amet ornare odio iaculis tincidunt. Nam id rhoncus orci. Nullam eu metus enim. Aliquam blandit urna nec felis laoreet, nec finibus turpis venenatis. Morbi eu ex euismod odio faucibus mattis. Fusce vel lectus leo. Quisque feugiat mi eu neque placerat, vel congue leo tristique. Mauris id nibh blandit, ullamcorper orci vel, luctus neque. Proin lobortis sapien euismod justo tristique, ut iaculis arcu molestie. Sed elementum sagittis nisl non fermentum. Vivamus eget ante ut risus ornare dapibus. Ut quis eros quis velit egestas aliquet. Quisque non elit quis libero semper lobortis sit amet eu neque. Sed id risus sed dui scelerisque consectetur. Proin venenatis, urna vel interdum imperdiet, orci purus semper elit, ac tristique dui erat ac lacus. Sed egestas vulputate congue.
+                            </p>
+                            <div class="text-footer"> * * * </div>
+                        </div>
+                        <!--p>
                         </p>
                         <p>
                         Quisque sit amet lectus a nisl tristique ultricies et id mauris. Quisque sit amet semper dolor, nec gravida nunc. Donec maximus massa scelerisque molestie iaculis. Pellentesque vestibulum, est eget convallis convallis, urna enim molestie neque, in efficitur eros ante non sapien. Quisque congue tortor a tortor dictum tempus. Proin laoreet condimentum sapien sed gravida. Quisque elementum euismod mi.
@@ -127,15 +137,15 @@
                         </p>
                         <p>
                         Mauris fermentum nisl quis porttitor pretium. Sed mauris quam, pharetra quis egestas vel, egestas eleifend diam. Quisque congue ante a arcu posuere, in euismod orci suscipit. Nulla luctus tellus ante, eget dapibus felis egestas quis. Aliquam et iaculis augue. Suspendisse aliquam orci dolor, in pulvinar massa gravida sit amet. Maecenas eget arcu dignissim, suscipit leo nec, sodales tellus. Etiam gravida imperdiet vulputate. Maecenas nec pharetra metus. Sed finibus sapien vitae elementum maximus. Pellentesque ullamcorper est nisl, at sagittis mauris elementum bibendum. Morbi mi mi, ornare nec odio pretium, mollis pharetra nisi. Praesent dolor lorem, porttitor quis pretium non, iaculis vitae eros. Vestibulum auctor interdum nulla quis lobortis.
-                        </p>
+                        </p -->
                     </div>
                     <div id ="bottom">
                         <strong> footer POTENTE</strong>
                     </div>
 
                     <script>
-                        /* add a class .isSticky if .my-header is sticked (works like a css selector) */
-                        const stickyElm = document.querySelector('.my-header');
+                        /* add a class .isSticky if .main-header is sticked (works like a css selector) */
+                        const stickyElm = document.querySelector('.main-header');
 
                         if (stickyElm) {
                             const observer = new IntersectionObserver(
@@ -143,7 +153,7 @@
                                     entries.forEach(entry => {
                                         const isAtTop = entry.boundingClientRect.top <= 0;
                                         // Adiciona a classe 'isSticky' se o elemento não estiver totalmente visível
-                                        // top: -1px; (in .my-header)
+                                        // top: -1px; (in .main-header)
                                         entry.target.classList.toggle('isSticky', isAtTop && entry.intersectionRatio < 1 );
                                     });
                                 },
