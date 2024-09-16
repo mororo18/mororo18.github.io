@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
     <style>
 /*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
@@ -35,7 +35,7 @@
 
 
                     <figure>
-                        <img id="my-icon" src="my-icon.png" alt="Minha Figura">
+                        <img id="my-icon" src="assets/my-icon.png" alt="Minha Figura">
                     </figure>
 
 
@@ -77,60 +77,106 @@
                         document.onwheel = (event) => {};
 
                         /*
-                    const blob = document.getElementById('blob');
+                        const blob = document.getElementById('blob');
 
-                    document.body.onpointermove = event => {
-                        const { clientX, clientY } = event;
+                        document.body.onpointermove = event => {
+                            const { clientX, clientY } = event;
 
-                        blob.animate({
-                            left: `${clientX}px`,
-                            top: `${clientY}px`
-                        }, {
-                            duration: 300,
-                            fill: 'forwards'
-                        });
-                    }
-                         */
+                            blob.animate({
+                                left: `${clientX}px`,
+                                top: `${clientY}px`
+                            }, {
+                                duration: 300,
+                                fill: 'forwards'
+                            });
+                        }
+                        */
 
 
 
                     </script>
                 </div>
 
-                <div class="body-wrapper">
-                    <div class="main-header">
-                        <div id="icon-box">
-                            <div class="pixel-corners--wrapper">
-                                <a href="#floating-space"><img class="pixel-corners"src="my-icon.png" alt="Minha Figura"></a>
-                            </div>
+                <div class="main-header">
+                    <div id="icon-box">
+                        <div class="pixel-corners--wrapper">
+                            <a href="#"><img class="pixel-corners"src="assets/my-icon.png" alt="Minha Figura"></a>
                         </div>
-                        <nav>
-                             <ul>
-                                 <li><a href="#posts">posts</a></li>
-                                 <li><a href="#projects">projects</a></li>
-                                 <li><a href="#about">about</a></li>
-                                 <li><a href="#resume">resume</a></li>
-                                 <li><a href="#contact">contact</a></li>
-                             </ul>
-                         </nav>
                     </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">home</a></li>
+                            <li><a href="#posts">posts</a></li>
+                            <li><a href="#projects">projects</a></li>
+                            <li><a href="#about">about</a></li>
+                            <li><a href="#resume">resume</a></li>
+                            <li><a href="#contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-                    <!--div class="header-area">
-                    </div-->
+                <div class="body-wrapper">
+
                     <div class="main-body">
                         <div class="text-area">
+
+
+
                             <div class="text-header" id="posts"> posts </div>
-                            <p id="eita">
-                            posts. Teste potente.
-                            </p>
+                            <div class="posts-container">
+
+                                <div class="post-wrapper">
+                                    <div class="pixel-corner--shadow">
+                                    </div>
+
+                                    <div class="pixel-corners--wrapper">
+
+                                        <div class="post-content pixel-corners">
+                                            <a href="posts/empty-post.html">
+                                                <div class="post-img">
+                                                    <img src="https://p1.hiclipart.com/preview/658/470/455/krzp-dock-icons-v-1-2-empty-grey-empty-text-png-clipart.jpg">
+                                                </div>
+                                                <div class="post-footer">
+                                                    <div class="post-title">
+                                                        Empty ...
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="post-wrapper">
+                                    <div class="pixel-corner--shadow">
+                                    </div>
+
+                                    <div class="pixel-corners--wrapper">
+
+                                        <div class="post-content pixel-corners">
+                                            <a href="https://github.com/mororo18/draw">
+                                                <div class="post-img">
+                                                    <img src="https://github.com/mororo18/draw/raw/main/readme/airplane.png?raw=true">
+                                                </div>
+                                                <div class="post-footer">
+                                                    <div class="post-title">
+                                                        Empty 2 ...
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="text-footer"> * * * </div>
 
-                            <div class="text-header" id="projects"> projects </div>
 
+
+                            <div class="text-header" id="projects"> projects </div>
                             <div class="projects-container">
 
                                 <div class="project-wrapper">
-                                    <div class="project-wrapper--shadow">
+                                    <div class="pixel-corner--shadow">
                                     </div>
 
                                     <div class="pixel-corners--wrapper">
@@ -138,7 +184,7 @@
                                         <div class="project-content pixel-corners">
                                             <a href="https://github.com/mororo18/draw">
                                                 <div class="project-img">
-                                                    <img src="logo-light-mode.png" style="width: 80%;">
+                                                    <img src="assets/logo-light-mode.png" style="width: 80%;">
                                                 </div>
                                                 <div class="project-footer">
                                                     <div class="project-title">
@@ -154,13 +200,13 @@
                                 </div>
 
                                 <div class="project-wrapper">
-                                    <div class="project-wrapper--shadow">
+                                    <div class="pixel-corner--shadow">
                                     </div>
                                     <div class="pixel-corners--wrapper">
                                         <div class="project-content pixel-corners">
                                             <a href="https://github.com/mororo18/DSanim">
                                                 <div class="project-img">
-                                                    <img src="BinarySearchTree.gif">
+                                                    <img src="assets/BinarySearchTree.gif">
                                                 </div>
                                                 <div class="project-footer">
                                                     <div class="project-title">
@@ -176,13 +222,13 @@
                                 </div>
 
                                 <div class="project-wrapper">
-                                    <div class="project-wrapper--shadow">
+                                    <div class="pixel-corner--shadow">
                                     </div>
                                     <div class="pixel-corners--wrapper">
                                         <div class="project-content pixel-corners">
-                                            <a href="">
+                                            <a href="#">
                                                 <div class="project-img">
-                                                    <img src="">
+                                                    <img style="max-height: unset; width: 120%;" src="https://p1.hiclipart.com/preview/658/470/455/krzp-dock-icons-v-1-2-empty-grey-empty-text-png-clipart.jpg">
                                                 </div>
                                                 <div class="project-footer">
                                                     <div class="project-title">
@@ -219,18 +265,9 @@
                             <div class="text-footer"> * * * </div>
 
                         </div>
-                        <!--p>
-                        </p>
-                        <p>
-                        Quisque sit amet lectus a nisl tristique ultricies et id mauris. Quisque sit amet semper dolor, nec gravida nunc. Donec maximus massa scelerisque molestie iaculis. Pellentesque vestibulum, est eget convallis convallis, urna enim molestie neque, in efficitur eros ante non sapien. Quisque congue tortor a tortor dictum tempus. Proin laoreet condimentum sapien sed gravida. Quisque elementum euismod mi.
-                        </p>
-                        <p>
-                        Vivamus dignissim, nulla et aliquet luctus, sem mauris imperdiet neque, sed elementum mauris ex vitae mauris. Aliquam erat volutpat. Maecenas vestibulum enim a est ullamcorper porta eu eget orci. Nam laoreet semper ligula, id faucibus metus interdum imperdiet. Nullam sed felis non quam malesuada mattis. Nulla imperdiet luctus ante at malesuada. Mauris nec nunc neque. Nulla semper feugiat magna, id rutrum purus dignissim id. Vivamus luctus tellus viverra finibus congue. Sed nec lacus libero. Etiam arcu leo, convallis sit amet mi eget, molestie mollis neque. Sed eu facilisis justo. Pellentesque finibus placerat lacus vitae iaculis. Ut suscipit, nisi vel lacinia mollis, sem ante bibendum nisl, id sagittis augue dui nec diam. Morbi vitae ultricies lorem, imperdiet cursus metus.
-                        </p>
-                        <p>
-                        Mauris fermentum nisl quis porttitor pretium. Sed mauris quam, pharetra quis egestas vel, egestas eleifend diam. Quisque congue ante a arcu posuere, in euismod orci suscipit. Nulla luctus tellus ante, eget dapibus felis egestas quis. Aliquam et iaculis augue. Suspendisse aliquam orci dolor, in pulvinar massa gravida sit amet. Maecenas eget arcu dignissim, suscipit leo nec, sodales tellus. Etiam gravida imperdiet vulputate. Maecenas nec pharetra metus. Sed finibus sapien vitae elementum maximus. Pellentesque ullamcorper est nisl, at sagittis mauris elementum bibendum. Morbi mi mi, ornare nec odio pretium, mollis pharetra nisi. Praesent dolor lorem, porttitor quis pretium non, iaculis vitae eros. Vestibulum auctor interdum nulla quis lobortis.
-                        </p -->
+
                     </div>
+
                     <div id ="bottom">
                         <strong> footer POTENTE</strong>
                     </div>
