@@ -1,17 +1,12 @@
 @import url("style.css");
 
-/*
-html, body {
-    scroll-snap-type: none;
-}
-*/
-
-
 #post-body-wrapper {
-    min-height: 100%;
+    height: 100%;
 }
 
 #post-body-wrapper #back-ground {
+    height: fit-content;
+    min-height: 100%;
     background: linear-gradient(
         rgba(255, 255, 255, 0.9),
         rgba(180, 180, 180, 0.8),
