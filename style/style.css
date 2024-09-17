@@ -42,6 +42,8 @@ html, body {
 */
 
 #back-ground {
+    display:flex;
+    flex-direction: column;
     /*overflow-y: scroll;*/
     --vheight: 100vh;
     --vwidth: 100vw;
@@ -187,8 +189,11 @@ html, body {
 
 
 .body-wrapper {
+    flex: 1;
     width: 100vw;
+    height: auto;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 
