@@ -5,6 +5,7 @@
 
 html, body {
     height: 100%;
+    width: 100vw;
     margin: 0;
     /* font-family: 'Google Sans', sans-serif, system-ui; */
     /*
@@ -654,6 +655,10 @@ html, body {
 
     .project-footer {
         border-top: 4px solid rgb(80, 80, 80);
+    }
+
+    #DSanim img {
+        content: url("../assets/DSanim.gif");
     }
 }
 
