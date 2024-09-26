@@ -511,6 +511,7 @@ html, body {
 .text-area .text-header, .text-footer, .text-section {
     font-family: "ThemeVCK Text";
     height: 200px;
+    width: 100%;
     display: flex;
 }
 
@@ -789,6 +790,38 @@ html, body {
 }
 
 .project-title, .project-description {
+}
+
+#about-section {
+    position: relative;
+    width: 100%;
+}
+
+.pic-wrapper {
+    position: relative;
+    height: 170px;
+    width:  170px;
+
+    margin: 15px;
+    padding: 10px;
+    float: left;
+}
+
+
+#about-section .pixel-corners--wrapper {
+    background-color: rgb(80, 80, 80);
+    z-index: 1;
+}
+
+.pic-wrapper  img {
+    margin-bottom: -6px;
+    max-width: 100%;
+    height: 100%;
+}
+
+#about-section p {
+    padding: 20px;
+    font-size: 18px;
 }
 
 
