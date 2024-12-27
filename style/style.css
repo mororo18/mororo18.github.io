@@ -7,16 +7,17 @@ html, body {
     height: 100%;
     width: 100vw;
     margin: 0;
-    /* font-family: 'Google Sans', sans-serif, system-ui; */
     /*
-    font-family: "Noto Serif", serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings:
     "wdth" 100;
+    font-family: "Noto Serif", serif;
+    font-family: 'Google Sans', sans-serif, system-ui;
+    font-family: "IBM Plex Sans";
     */
 
-    font-family: "IBM Plex Sans", system-ui;
+    font-family: "Source Sans 3", serif;
     font-weight: 400;
     font-style: normal;
 
@@ -548,22 +549,46 @@ html, body {
 }
 
 .text-figure {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
+.text-figure-img {
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
 .text-figure-img[style*="--width"] {
-    width: var(--width);
+    max-width: var(--width);
+}
+
+.text-figure-img[style*="--height"] {
+    height: var(--height);
 }
 
 .text-figure-img img {
-    width: 100%;
+
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+.text-figure-img img[style*="--scale"] {
+    height: auto; 
+    width: auto; 
+    max-width: calc(300px * var(--scale)); 
+    max-height: calc(300px * var(--scale)); 
 }
 
 .text-figure-caption {
-    margin-top: 10px;
+    width: 100%;
+    margin: 20px;
     text-align: center;
     font-style: italic;
 }
