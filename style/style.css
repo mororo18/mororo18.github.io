@@ -209,7 +209,7 @@ html, body {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 
     background-color: white;
     border-radius: 20px;
@@ -898,6 +898,27 @@ html, body {
     width: 80%;
 }
 
+#contact-links li {
+    display: inline;
+    cursor: pointer;
+    margin-left:  15px;
+    margin-right: 15px;
+}
+
+#contact-links ul {
+    padding-left: 10px;
+}
+/*
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+*/
+
+#contact-links li a {
+    all: unset;
+}
+
 
 #blob {
 	background: radial-gradient(rgb(110, 110, 110), transparent);
@@ -919,7 +940,9 @@ html, body {
 
 
 #bottom {
+    scroll-snap-type: y proximity;
     scroll-snap-stop: always;
+    scroll-snap-align: end;
     display: flex;
     justify-content: center;
     align-items:     center;
