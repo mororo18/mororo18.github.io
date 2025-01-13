@@ -905,6 +905,14 @@ html, body {
     margin-right: 15px;
 }
 
+#contact-links img {
+    transition: transform 0.3s;
+}
+
+#contact-links img:hover {
+    transform: scale(1.15);
+}
+
 #contact-links ul {
     padding-left: 10px;
 }
